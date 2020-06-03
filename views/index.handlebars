@@ -1,8 +1,9 @@
+<body>
 <h1>Eat-Da-Burger!</h1>
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-6 float-left">
             <h2>Burgers ready for devouring</h2>
             <ul>
                 {{#each burgers}}
@@ -12,13 +13,13 @@
                 {{/each}}
             </ul>
         </div>
-        <div class="col-sm-6">
+        <div class="col-md-6 float-left">
             <h2>Burgers that have been devoured</h2>
             <ul>
                 {{#each burgers}}
-                    {{#unless devoured}}
-                        {{> burgers/burger-block devoured=false}}
-                    {{/unless}}
+                    {{#if devoured}}
+                        {{> burgers/burger-block devoured=true}}
+                    {{/if}}
                 {{/each}}
             </ul>
         </div>
@@ -43,3 +44,4 @@
             </form>
     </div>
 </div>
+</body>
