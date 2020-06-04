@@ -37,7 +37,6 @@
                 {{!-- if row property is not devoured, then list it --}}
                     {{#unless devoured}}
                     {{!-- render li elements using partial where devour is false--}}
-                    {{!-- <li class="list-group-item fontsize" ></li> --}}
                     {{> burgers/burger-block devoured=false}}
                     {{/unless}}
                 {{/each}}
@@ -51,7 +50,6 @@
                 {{#each burgers}}
                     {{#if devoured}}
                     {{!-- reander li elements usings partial where devoured is true --}}
-                    {{!-- <li class="list-group-item fontsize" ></li> --}}
                     {{> burgers/burger-block devoured=true}}
                     {{/if}}
                 {{/each}}
