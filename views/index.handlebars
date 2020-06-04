@@ -1,19 +1,21 @@
 <body id="backgroundcolor">
-<h1>Eat-Da-Burger!</h1>
 
-{{!-- <div class="container-fluid"> --}}
+
+<div class="container-fluid">
+    <h1 class = "center">The Burger-Logger!</h1><hr>
     <div class="row">
-        <div class = "col-md-2">
-            <h1>This should be on the left side of the screen</h1>
+        
+        <div class = "col-md-5">
+ 
             
             </div>
-            <div class ="col-md-8">
+            <div class ="col-md-2">
                 
-                <h3>Create a Burger</h3><br>
+                <h2 class = "center">Create a Burger</h2><br>
                 {{!-- create burger form --}}
                     <form class = "create-form">
-                        <div class = "form-group">
-                            <input type = "text" id = "burger" name = "burgername">
+                        <div class = "form-group textareasize">
+                            <input type = "text" id = "burger" size = "26" name = "burgername">
                         </div>
                         <div>
                             {{!-- user can select if burger they want to add is devoured or uneaten --}}
@@ -27,35 +29,33 @@
                     <h7>Enter a burger you want to eat, click the Submit button</h7>
                     </form>
                     </div>
-                    <div class ="col-sm-2">
-                        <h1>This should be on the right side of the screen</h1>
-                    </div>
-                
-        
-    </div>
-{{!-- </div> --}}
+                    <div class ="col-sm-5">
 
+                    </div>
+    </div>
+</div>
+<hr>
 <div class="container">
     <div class="row">
         <div class="col-md-6 float-left">
-            <h2>Burgers ready for devouring</h2>
+            <h2 class = "center">Burgers ready to be devoured</h2><br>
             {{!-- loops through burgers object --}}
-            <ul>
+            <ul class="list-group">
                 {{#each burgers}}
                 {{!-- if row property is not devoured, then list it --}}
                     {{#unless devoured}}
-                        {{!-- render li elements using partial --}}
-                        {{> burgers/burger-block devoured=false}}
+                    {{!-- render li elements using partial --}}
+                    <li class="list-group-item fontsize" {{> burgers/burger-block devoured=false}}></li>
                     {{/unless}}
                 {{/each}}
             </ul>
         </div>
         <div class="col-md-6 float-left">
-            <h2>Burgers that have been devoured</h2>
-            <ul>
+            <h2 class = "center">Burgers that have been devoured</h2><br>
+            <ul class="list-group">
                 {{#each burgers}}
                     {{#if devoured}}
-                        {{> burgers/burger-block devoured=true}}
+                    <li class="list-group-item fontsize" {{> burgers/burger-block devoured=true}}></li>
                     {{/if}}
                 {{/each}}
             </ul>
