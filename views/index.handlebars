@@ -1,13 +1,50 @@
-<body>
+<body id="backgroundcolor">
 <h1>Eat-Da-Burger!</h1>
+
+{{!-- <div class="container-fluid"> --}}
+    <div class="row">
+        <div class = "col-md-2">
+            <h1>This should be on the left side of the screen</h1>
+            
+            </div>
+            <div class ="col-md-8">
+                
+                <h3>Create a Burger</h3><br>
+                {{!-- create burger form --}}
+                    <form class = "create-form">
+                        <div class = "form-group">
+                            <input type = "text" id = "burger" name = "burgername">
+                        </div>
+                        <div>
+                            {{!-- user can select if burger they want to add is devoured or uneaten --}}
+                            <label for="devo">Devoured?</label><br>
+                            <input type="radio" name = "devoured" value="1">Devoured!<br>
+                            <input type="radio" name = "devoured" value="0">Uneaten
+
+                        </div>
+                        {{!-- submit button for user to add burger to database --}}
+                        <button type = "submit">Submit Burger</button>
+                    <h7>Enter a burger you want to eat, click the Submit button</h7>
+                    </form>
+                    </div>
+                    <div class ="col-sm-2">
+                        <h1>This should be on the right side of the screen</h1>
+                    </div>
+                
+        
+    </div>
+{{!-- </div> --}}
 
 <div class="container">
     <div class="row">
         <div class="col-md-6 float-left">
             <h2>Burgers ready for devouring</h2>
+            {{!-- loops through burgers object --}}
             <ul>
                 {{#each burgers}}
+                {{!-- if row property is not devoured, then list it --}}
                     {{#unless devoured}}
+                        {{!-- render li elements using partial --}}
                         {{> burgers/burger-block devoured=false}}
                     {{/unless}}
                 {{/each}}
@@ -26,22 +63,4 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <h3>Create a Burger</h3><br>
-            <form class = "create-form">
-                <div class = "form-group">
-                    <input type = "text" id = "burger" name = "burgername">
-                </div>
-                <div>
-                    <label for="devo">Devoured?</label><br>
-                    <input type="radio" name = "devoured" value="1">Devoured!<br>
-                    <input type="radio" name = "devoured" value="0">Uneaten
-
-                </div>
-                <button type = "submit">Submit Burger</button>
-            <h7>Enter a burger you want to eat, click the Submit button</h7>
-            </form>
-    </div>
-</div>
 </body>
