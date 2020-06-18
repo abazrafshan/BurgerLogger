@@ -31,7 +31,8 @@ If you have any questions about the repo, open an issue or contact [abazrafshan]
 
 ## Links
 
-Link to Github repo: (https://github.com/abazrafshan/BurgerLogger)
+Link to Github repo: https://github.com/abazrafshan/BurgerLogger
+Link to deployed application: https://shrouded-fjord-25692.herokuapp.com/
 
 ## Screenshot
 
